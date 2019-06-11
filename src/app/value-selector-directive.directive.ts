@@ -13,7 +13,6 @@ export class ValueSelectorDirectiveDirective {
   constructor(private el: ElementRef, private overlay: Overlay, private ctrl: NgControl) { }
 
   @HostListener('focus') inputFocused() {
-    console.log("focused:", this.el);
     this.overlayRef = this.overlay.create({
       height: '200px',
       width: '400px',
@@ -30,12 +29,7 @@ export class ValueSelectorDirectiveDirective {
     }, err => 0, () => this.close());
   }
 
-  @HostListener('blur') inputBlured() {
-
-  }
-
   private close() {
-    console.log("closed");
     this.overlayRef.dispose();
   }
 }
