@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-form-field style="width: 100%" appearance="outline">
+	<input #inp matInput type="text" [formControl]="formCtrl" appValueSelectorDirective>
+    <mat-label>enter text...</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <mat-icon *ngIf="formCtrl.value" matSuffix (click)="formCtrl.setValue()">close</mat-icon>
+ </mat-form-field>
+
+ <div>Value : {{ formCtrl.value ? formCtrl.value : "..."  }}</div>
